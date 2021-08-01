@@ -1,0 +1,9 @@
+{
+  "extends": [
+    "stylelint-config-twbs-bootstrap/scss"
+  ],
+  "rules": {
+    "selector-max-compound-selectors": null,
+    "selector-max-type": null
+  }
+}
