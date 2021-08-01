@@ -1,0 +1,170 @@
+// Override Bootstrap's Sass default variables
+//
+// Nearly all variables in Bootstrap are written with the `!default` flag.
+// This allows you to override the default values of those variables before
+// you import Bootstrap's source Sass files.
+//
+// Overriding the default variable values is the best way to customize your
+// CSS without writing _new_ styles. For example, change you can either change
+// `$body-color` or write more CSS that override's Bootstrap's CSS like so:
+// `body { color: red; }`.
+
+
+//
+// Bring in Bootstrap
+//
+
+@import "bootstrap/scss/functions"; // Required
+@import "bootstrap/scss/variables"; // Required
+@import "bootstrap/scss/mixins"; // Required
+@import "bootstrap/scss/utilities"; // Required
+
+// Place variable overrides first, then import just the styles you need. Note that some stylesheets are required no matter what.
+
+$font-size-root: 12px;
+$h1-font-size: $font-size-base * 1.5;
+$h2-font-size: $font-size-base;
+$h3-font-size: $font-size-base;
+$h4-font-size: $font-size-base;
+$h5-font-size: $font-size-base;
+$headings-font-weight: $font-weight-bold;
+
+@import "bootstrap/scss/root"; // Required
+@import "bootstrap/scss/reboot"; // Required
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/images";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/tables";
+// @import "bootstrap/scss/forms";
+// @import "bootstrap/scss/buttons";
+// @import "bootstrap/scss/transitions";
+// @import "bootstrap/scss/dropdown";
+// @import "bootstrap/scss/button-group";
+// @import "bootstrap/scss/nav";
+// @import "bootstrap/scss/navbar"; // Requires nav
+// @import "bootstrap/scss/card";
+// @import "bootstrap/scss/accordian";
+// @import "bootstrap/scss/breadcrumb";
+// @import "bootstrap/scss/pagination";
+// @import "bootstrap/scss/badge";
+// @import "bootstrap/scss/alert";
+// @import "bootstrap/scss/progress";
+// @import "bootstrap/scss/list-group";
+// @import "bootstrap/scss/close";
+// @import "bootstrap/scss/toasts";
+// @import "bootstrap/scss/modal"; // Requires transitions
+// @import "bootstrap/scss/tooltip";
+// @import "bootstrap/scss/popover";
+// @import "bootstrap/scss/carousel";
+// @import "bootstrap/scss/spinners";
+// @import "bootstrap/scss/offcanvas";
+
+@import "bootstrap/scss/helpers";
+
+@import "bootstrap/scss/utilities/api";
+
+
+//
+// Custom styles
+//
+
+.sds {
+  @include make-container();
+
+  h1,
+  .h2 {
+    > small,
+    > .small {
+      font-weight: inherit;
+    }
+  }
+
+  h2,
+  .h2 {
+    counter-increment: section;
+
+    &::before {
+      text-transform: uppercase;
+      content: "Section " counter(section) ": ";
+    }
+  }
+
+  h3,
+  .h3 {
+    margin-top: $headings-margin-bottom;
+  }
+
+  h4,
+  .h4,
+  address,
+  dl,
+  dd {
+    margin-bottom: 0;
+  }
+
+  .table {
+    h3,
+    .h3 {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  .datasheet {
+    counter-reset: section;
+  }
+
+  .header {
+    padding-top: $spacer * 1.5;
+    padding-bottom: $spacer;
+    background-color: $body-bg;
+    border-bottom: solid $border-width $border-color;
+  }
+
+  .section {
+    margin-top: $spacer * 1.5;
+    page-break-inside: avoid;
+
+    > ol {
+      list-style: none;
+      counter-reset: sub-section;
+      padding-inline-start: 0;
+
+      > li {
+        display: block;
+        padding-inline-start: $spacer * 3;
+
+        h3,
+        .h3 {
+          &::before {
+            position: absolute;
+            font-weight: $headings-font-weight;
+            line-height: headings-line-height;
+            text-indent: -($spacer * 3);
+            content: counter(section) "." counters(sub-section, ".");
+            counter-increment: sub-section;
+          }
+        }
+      }
+    }
+  }
+
+  .img-ghs {
+    width: $spacer * 6;
+    height: $spacer * 6;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  @for $i from 1 through 9 {
+    .img-ghs0#{$i} {
+      background-image: url(../img/ghs0#{$i}.svg);
+    }
+  }
+
+  .figure {
+    text-align: center;
+  }
+}
