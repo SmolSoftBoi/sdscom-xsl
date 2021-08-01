@@ -1,0 +1,39 @@
+{
+  "name": "sdscom-xsl",
+  "version": "4.4.0",
+  "description": "Style sheet documents of SDScom.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EpicKris/sdscom-xsl.git"
+  },
+  "author": "Kristian Matthews <kristian.matthews@me.com>",
+  "license": "CC0-1.0",
+  "private": true,
+  "scripts": {
+    "build": "npm run css",
+    "css": "npm-run-all css-compile css-prefix",
+    "css-compile": "sass --style compressed --source-map --embed-sources --no-error-css --load-path node_modules scss:assets/css/",
+    "css-lint": "stylelint scss/",
+    "css-prefix": "postcss --replace assets/css/starter.css --use autoprefixer --map",
+    "css-purge": "purgecss --keyframes --css assets/css/starter.css --content SDSComXSL_EN.xsl \"node_modules/bootstrap/js/dist/{util,modal}.js\" --output assets/css/",
+    "server": "serve --listen 3000",
+    "start": "npm-run-all --parallel watch server",
+    "watch": "nodemon -e html,scss -x \"npm run css\"",
+    "test": "npm run css-lint && npm run css"
+  },
+  "dependencies": {
+    "bootstrap": "^5.0.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.3.1",
+    "nodemon": "^2.0.12",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.3.6",
+    "postcss-cli": "^8.3.1",
+    "purgecss": "^4.0.3",
+    "sass": "^1.36.0",
+    "serve": "^12.0.0",
+    "stylelint": "^13.13.1",
+    "stylelint-config-twbs-bootstrap": "^2.2.3"
+  }
+}
