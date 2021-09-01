@@ -135,6 +135,7 @@
                     </xsl:call-template>
                 </xsl:variable>
                 <xsl:value-of select="replace($Phrase/FullText, '\.\.\.', $MergePhrase-Text)"/>
+                <xsl:if test="not($Phrase/MergePhrase) and substring($Phrase/FullText, string-length($Phrase/FullText), 1) = '.'">&#160;</xsl:if>
                 <xsl:call-template name="MergePhrase-Delimiter">
                     <xsl:with-param name="MergePhrase" select="$Phrase/MergePhrase"/>
                 </xsl:call-template>
