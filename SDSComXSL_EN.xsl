@@ -174,9 +174,9 @@
 
     <!-- Section 16 -->
     <xsl:variable name="Section16" select="'Other information'"/>
-    <xsl:variable name="Section16.1" select="'Indication of changes'"/>
-    <xsl:variable name="Section16.2" select="'Abbreviations and acronyms'"/>
-    <xsl:variable name="Section16.3" select="'Key literature references and sources for data'"/>
+    <xsl:variable name="Section16-RevisionInformation" select="'Indication of changes'"/>
+    <xsl:variable name="Section16-AbbreviationsAndAcronymsUsed" select="'Abbreviations and acronyms'"/>
+    <xsl:variable name="Section16-MainInformationSource" select="'Key literature references and sources for data'"/>
     <xsl:variable name="Section16.4" select="'Classification for mixtures and used evaluation method according to regulation (EC) 1207/2008 [CLP]'"/>
     <xsl:variable name="Section16.5" select="'Relevant H- and EUH-phrases (number and full text)'"/>
     <xsl:variable name="Section16.6" select="'Training advice'"/>

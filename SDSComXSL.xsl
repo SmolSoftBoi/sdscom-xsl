@@ -1422,67 +1422,18 @@
             </h2>
             <ol>
                 <!-- Indication of changes -->
-                <li>
-                    <h3>
-                        <xsl:value-of select="$Section16.1"/>
-                    </h3>
-                    <xsl:if test="RevisionInformation/RevisionComments">
-                        <xsl:call-template name="Phrase">
-                            <xsl:with-param name="Phrase" select="RevisionInformation/RevisionComments"/>
-                        </xsl:call-template>
-                    </xsl:if>
-                </li>
-
-                <!-- Abbreviations and acronyms -->
-                <li>
-                    <h3>
-                        <xsl:value-of select="$Section16.2"/>
-                    </h3>
-                </li>
-
-                <!-- Key literature references and sources for data -->
-                <li>
-                    <h3>
-                        <xsl:value-of select="$Section16.3"/>
-                    </h3>
-                </li>
-
-                <!-- Classification for mixtures and used evaluation method according to regulation (EC) 1207/2008 [CLP] -->
-                <li>
-                    <h3>
-                        <xsl:value-of select="$Section16.4"/>
-                    </h3>
-                </li>
-
-                <!-- Relevant H- and EUH-phrases (number and full text) -->
-                <li>
-                    <h3>
-                        <xsl:value-of select="$Section16.5"/>
-                    </h3>
-                    <xsl:if test="RelevantHazardStatements">
-                        <strong class="text-danger">Error: Section 16.5 not implemented.</strong>
-                    </xsl:if>
-                </li>
-
-                <!-- Training advice -->
-                <li>
-                    <h3>
-                        <xsl:value-of select="$Section16.5"/>
-                    </h3>
-                    <xsl:if test="EducationalRecommendations">
-                        <strong class="text-danger">Error: Section 16.5 not implemented.</strong>
-                    </xsl:if>
-                </li>
-
-                <!-- Further information -->
-                <li>
-                    <h3>
-                        <xsl:value-of select="$Section16.6"/>
-                    </h3>
-                    <xsl:if test="FurtherInformation">
-                        <strong class="text-danger">Error: Section 16.6 not implemented.</strong>
-                    </xsl:if>
-                </li>
+                <xsl:if test="RevisionInformation/RevisionComments">
+                    <li>
+                        <h3>
+                            <xsl:value-of select="$Section16-RevisionInformation"/>
+                        </h3>
+                        <xsl:if test="RevisionInformation/RevisionComments">
+                            <xsl:call-template name="Phrase">
+                                <xsl:with-param name="Phrase" select="RevisionInformation/RevisionComments"/>
+                            </xsl:call-template>
+                        </xsl:if>
+                    </li>
+                </xsl:if>
             </ol>
         </div>
     </xsl:template>
