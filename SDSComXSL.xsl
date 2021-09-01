@@ -837,7 +837,7 @@
                 <!-- Reference to other sections -->
                 <li>
                     <h3>
-                        <xsl:value-of select="$Section6.3"/>
+                        <xsl:value-of select="$Section6.4"/>
                     </h3>
                     <xsl:for-each select="ReferenceToOtherSections">
                         <xsl:call-template name="Phrase">
