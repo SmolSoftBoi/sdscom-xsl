@@ -170,9 +170,14 @@
         <dt class="col-4">
             <xsl:for-each select="$PrecautionaryStatement/PhraseCode">
                 <xsl:if test="position() > 1">
-                    <xsl:call-template name="MergePhrase-Delimiter">
-                        <xsl:with-param name="MergePhrase" select="$PrecautionaryStatement/MergePhrase"/>
-                    </xsl:call-template>
+                    <xsl:choose>
+                        <xsl:when test="$PrecautionaryStatement/MergePhrase">
+                            <xsl:call-template name="MergePhrase-Delimiter">
+                                <xsl:with-param name="MergePhrase" select="$PrecautionaryStatement/MergePhrase"/>
+                            </xsl:call-template>
+                        </xsl:when>
+                        <xsl:otherwise>+</xsl:otherwise>
+                    </xsl:choose>
                 </xsl:if>
                 <xsl:call-template name="PrecautionaryStatementEnum">
                     <xsl:with-param name="PrecautionaryStatementEnum" select="."/>
