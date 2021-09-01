@@ -237,6 +237,18 @@
         </xsl:choose>
     </xsl:template>
 
+    <!-- Symbol -->
+    <xsl:template name="SymbolEnum">
+        <xsl:param name="SymbolEnum"/>
+        <xsl:choose>
+            <xsl:when test="$SymbolEnum = 'lt'">&lt;</xsl:when>
+            <xsl:when test="$SymbolEnum = 'ge'">≥</xsl:when>
+            <xsl:otherwise>
+                <strong class="text-danger">Error: Symbol not implemented.</strong>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+
     <!-- Transport class -->
     <xsl:template name="TransportClassEnum">
         <xsl:param name="TransportClassEnum"/>
@@ -260,8 +272,18 @@
             <strong class="text-danger">Error: Value not implemented.</strong>
             </xsl:when>
             <xsl:otherwise>
+                <xsl:if test="$Value/LowerValueSymbol">
+                    <xsl:call-template name="SymbolEnum">
+                        <xsl:with-param name="SymbolEnum" select="$Value/LowerValueSymbol"/>
+                    </xsl:call-template>
+                </xsl:if>
                 <xsl:value-of select="$Value/LowerValue"/>
                 <xsl:if test="$Value/LowerValue and $Value/UpperValue"> - </xsl:if>
+                <xsl:if test="$Value/UpperValueSymbol">
+                    <xsl:call-template name="SymbolEnum">
+                        <xsl:with-param name="SymbolEnum" select="$Value/UpperValueSymbol"/>
+                    </xsl:call-template>
+                </xsl:if>
                 <xsl:value-of select="$Value/UpperValue"/>
             </xsl:otherwise>
         </xsl:choose>
