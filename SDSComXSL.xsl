@@ -661,6 +661,17 @@
                     <xsl:if test="DescriptionOfFirstAidMeasures">
                         <xsl:if test="DescriptionOfFirstAidMeasures/FirstAidSkin">
                             <h4>
+                                <xsl:value-of select="$Section4.1-FirstAidInhalation"/>
+                            </h4>
+                            <xsl:for-each select="DescriptionOfFirstAidMeasures/FirstAidInhalation">
+                                <xsl:call-template name="Phrase">
+                                    <xsl:with-param name="Phrase" select="."/>
+                                </xsl:call-template>
+                            </xsl:for-each>
+                        </xsl:if>
+
+                        <xsl:if test="DescriptionOfFirstAidMeasures/FirstAidSkin">
+                            <h4>
                                 <xsl:value-of select="$Section4.1-FirstAidSkin"/>
                             </h4>
                             <xsl:for-each select="DescriptionOfFirstAidMeasures/FirstAidSkin">

@@ -74,6 +74,7 @@
     <!-- Section 4 -->
     <xsl:variable name="Section4" select="'First aid measures'"/>
     <xsl:variable name="Section4.1" select="'Description of first aid measures'"/>
+    <xsl:variable name="Section4.1-FirstAidInhalation" select="'Following inhalation'"/>
     <xsl:variable name="Section4.1-FirstAidSkin" select="'Following skin contact'"/>
     <xsl:variable name="Section4.1-FirstAidEye" select="'Following eye contact'"/>
     <xsl:variable name="Section4.1-FirstAidIngestion" select="'Following ingestion'"/>
