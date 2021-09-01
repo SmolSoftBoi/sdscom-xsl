@@ -85,6 +85,7 @@
     <xsl:variable name="Section5" select="'Firefighting measures'"/>
     <xsl:variable name="Section5.1" select="'Extinguishing media'"/>
     <xsl:variable name="Section5.1-MediaToBeUsed" select="'Suitable extinguishing media'"/>
+    <xsl:variable name="Section5.1-MediaNotBeUsed" select="'Unsuitable extinguishing media'"/>
     <xsl:variable name="Section5.2" select="'Special hazards arising from the substance or mixture'"/>
     <xsl:variable name="Section5.2-HazardCombustionProd" select="'Hazardous combustion products'"/>
     <xsl:variable name="Section5.3" select="'Advice for fire-fighters'"/>

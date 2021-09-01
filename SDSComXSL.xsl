@@ -752,6 +752,17 @@
                                 </xsl:call-template>
                             </xsl:for-each>
                         </xsl:if>
+
+                        <xsl:if test="ExtinguishingMedia/MediaNotBeUsed">
+                            <h4>
+                                <xsl:value-of select="$Section5.1-MediaNotBeUsed"/>
+                            </h4>
+                            <xsl:for-each select="ExtinguishingMedia/MediaNotBeUsed">
+                                <xsl:call-template name="Phrase">
+                                    <xsl:with-param name="Phrase" select="."/>
+                                </xsl:call-template>
+                            </xsl:for-each>
+                        </xsl:if>
                     </xsl:if>
                 </li>
 
