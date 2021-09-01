@@ -52,7 +52,9 @@
                 </xsl:if>
                 <xsl:call-template name="HazardClassCategoryEnum">
                     <xsl:with-param name="HazardClassCategoryEnum" select="ClpHazardClassCategory"/>
-                </xsl:call-template>, <xsl:for-each select="ClpHazardStatement">
+                </xsl:call-template>
+                <xsl:if test="ClpHazardClassCategory and ClpHazardStatement">, </xsl:if>
+                <xsl:for-each select="ClpHazardStatement">
                     <xsl:call-template name="HazardStatement">
                         <xsl:with-param name="HazardStatement" select="."/>
                     </xsl:call-template>
