@@ -296,8 +296,8 @@
                         <h4>
                             <xsl:choose>
                                 <xsl:when test="Role/RoleCode">
-                                    <xsl:call-template name="Phrase">
-                                        <xsl:with-param name="Phrase" select="Role/RoleCode"/>
+                                    <xsl:call-template name="RoleDescriptionEnum">
+                                        <xsl:with-param name="RoleDescriptionEnum" select="Role/RoleCode"/>
                                     </xsl:call-template>
                                 </xsl:when>
                                 <xsl:otherwise>
@@ -517,8 +517,32 @@
                     <h3>
                         <xsl:value-of select="$Section2.3"/>
                     </h3>
-                    <xsl:if  test="OtherHazardsInfo">
-                        <strong class="text-danger">Error: Section 2.3 not implemented.</strong>
+                    <xsl:if test="OtherHazardsInfo">
+                        <dl class="row">
+                            <xsl:if test="OtherHazardsInfo/PhysicochemicalEffect">
+                                <strong class="text-danger">Error: Section 2.3 not implemented for physiochemical effects.</strong>
+                            </xsl:if>
+                            <xsl:if test="OtherHazardsInfo/HealthEffect">
+                                <strong class="text-danger">Error: Section 2.3 not implemented for health effects.</strong>
+                            </xsl:if>
+                            <xsl:if test="OtherHazardsInfo/EnvironmentalEffect">
+                                <strong class="text-danger">Error: Section 2.3 not implemented for environmental effects.</strong>
+                            </xsl:if>
+                            <xsl:if test="OtherHazardsInfo/OtherHazards">
+                                <dt clas="col-4">
+                                    <h4>
+                                        <xsl:value-of select="$Section2.3-OtherHazards"/>
+                                    </h4>
+                                </dt>
+                                <dd class="col-8">
+                                    <xsl:for-each select="OtherHazardsInfo/OtherHazards">
+                                        <xsl:call-template name="Phrase">
+                                            <xsl:with-param name="Phrase" select="."/>
+                                        </xsl:call-template>
+                                    </xsl:for-each>
+                                </dd>
+                            </xsl:if>
+                        </dl>
                     </xsl:if>
                 </li>
             </ol>

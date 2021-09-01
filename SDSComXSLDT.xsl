@@ -204,6 +204,12 @@
         </xsl:choose>
     </xsl:template>
 
+    <!-- Role description -->
+    <xsl:template name="RoleDescriptionEnum">
+        <xsl:param name="RoleDescriptionEnum"/>
+        <xsl:value-of select="$RoleDescriptionEnum"/>
+    </xsl:template>
+
     <!-- Signal word -->
     <xsl:template name="SignalWord">
         <xsl:param name="SignalWord"/>

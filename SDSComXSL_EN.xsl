@@ -56,6 +56,7 @@
     <xsl:variable name="Section2.2" select="'Label elements'"/>
     <xsl:variable name="Section2.2-HazardLabelling" select="'Labelling according to Regulation (EC) No 1272/2008 [CLP/GHS]'"/>
     <xsl:variable name="Section2.3" select="'Other hazards'"/>
+    <xsl:variable name="Section2.3-OtherHazards" select="'Other adverse hazards'"/>
 
     <!-- Section 3 -->
     <xsl:variable name="Section3" select="'Composition/information on ingredients'"/>
