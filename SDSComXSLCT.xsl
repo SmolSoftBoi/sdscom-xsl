@@ -149,6 +149,9 @@
             <xsl:when test="$SubstanceName/IupacName">
                 <xsl:value-of select="$SubstanceName/IupacName"/>
             </xsl:when>
+            <xsl:when test="$SubstanceName/Synonyme">
+                <xsl:value-of select="$SubstanceName/Synonyme"/>
+            </xsl:when>
             <xsl:otherwise>
                 <strong class="text-danger">Error: Substance name not implemented.</strong>
             </xsl:otherwise>
