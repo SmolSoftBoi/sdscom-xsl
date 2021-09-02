@@ -260,7 +260,7 @@
         <xsl:param name="Value"/>
         <xsl:choose>
             <xsl:when test="$Value/ExactValue">
-                <strong class="text-danger">Error: Value not implemented.</strong>
+                <xsl:value-of select="$Value/ExactValue"/>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:if test="$Value/LowerValueSymbol">
