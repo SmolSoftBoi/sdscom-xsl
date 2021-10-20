@@ -1404,10 +1404,14 @@
                 <!-- Chemical Safety Assessment -->
                 <li>
                     <h3>
-                        <xsl:value-of select="$Section15.1"/>
+                        <xsl:value-of select="$Section15.2"/>
                     </h3>
                     <xsl:if test="ChemicalSafetyAssessmentInfo">
-                        <strong class="text-danger">Error: Section 15.1 not implemented.</strong>
+                        <xsl:for-each select="ChemicalSafetyAssessmentInfo/ChemicalSafetyAssessment">
+                            <xsl:call-template name="Phrase">
+                                <xsl:with-param name="Phrase" select="."/>
+                            </xsl:call-template>
+                        </xsl:for-each>
                     </xsl:if>
                 </li>
             </ol>
