@@ -4,9 +4,9 @@
   "description": "Style sheet documents of SDScom.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/EpicKris/sdscom-xsl.git"
+    "url": "git+https://github.com/SmolSoftBoi/sdscom-xsl.git"
   },
-  "author": "Kristian Matthews <kristian.matthews@me.com>",
+  "author": "Kristian Matthews-Kennington <kristian@matthews-kennington.com>",
   "license": "CC0-1.0",
   "private": true,
   "scripts": {

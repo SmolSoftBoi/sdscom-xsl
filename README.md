@@ -2,7 +2,7 @@
 Style sheet documents of SDScom.
 
 ## About
-`sdscom-xsl` is a GitHub repository for creating new SDScom-powered HTML, maintained by author @EpicKris. You can also use it as your own SDScom XML prototyping sandbox. It's built with SDScom XML v4.4 with plans to update for v5.
+`sdscom-xsl` is a GitHub repository for creating new SDScom-powered HTML, maintained by author @SmolSoftBoi. You can also use it as your own SDScom XML prototyping sandbox. It's built with SDScom XML v4.4 with plans to update for v5.
 
 ## What's included
 - XSL (`SDSComXSL_XX.xsl`) to demonstrate how to include SDScom XSL.
@@ -12,7 +12,7 @@ Style sheet documents of SDScom.
 
 XSL files with language suffix offer usable transformations, with `SDSComXSL_XX.xsl` being the main file (insert uppercase ISO 639-1 language code for `XX`).
 Add:
-`<?xml-stylesheet type="text/xsl" href="https://raw.githubusercontent.com/EpicKris/esdscom-xsl/main/SDSComXSL_XX.xsl"?>`
+`<?xml-stylesheet type="text/xsl" href="https://raw.githubusercontent.com/SmolSoftBoi/esdscom-xsl/main/SDSComXSL_XX.xsl"?>`
 to the XML file(s) to facilitate automatic transformation, for example.
 
 Tested with Saxon JS v2.2 for transformation.

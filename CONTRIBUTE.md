@@ -6,7 +6,7 @@ Be sure to have [Node.js](https://nodejs.org/) installed before proceeding.
 
 ```shell
 # Clone the repo
-git clone https://github.com/EpicKris/sdscom-xsl
+git clone https://github.com/SmolSoftBoi/sdscom-xsl
 cd sdscom-xsl
 
 # Install dependencies
