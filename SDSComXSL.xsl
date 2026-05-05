@@ -399,7 +399,7 @@
                                     </h5>
                                 </dt>
                                 <dd class="col-8">
-                                    <a href="CompanyUrl" target="_blank"><xsl:value-of select="CompanyUrl"/></a>
+                                    <a href="{CompanyUrl}" target="_blank" rel="noopener noreferrer"><xsl:value-of select="CompanyUrl"/></a>
                                 </dd>
                             </xsl:if>
 
