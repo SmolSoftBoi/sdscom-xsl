@@ -1203,7 +1203,7 @@
                     </xsl:if>
                 </li>
 
-                <!-- Mobility in soilMobility in soil -->
+                <!-- Mobility in soil -->
                 <li>
                     <h3>
                         <xsl:value-of select="$Section12.4"/>
