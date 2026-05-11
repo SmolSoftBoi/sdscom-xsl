@@ -387,7 +387,7 @@
                                         <xsl:if test="position() > 1">
                                             <br/>
                                         </xsl:if>
-                                        <a href="mailto:{.}?subject={$Title}%20{ProductNo}"><xsl:value-of select="."/></a>
+                                        <a href="mailto:{fn:encode-for-uri(.)}?subject={fn:encode-for-uri($Title)}%20{fn:encode-for-uri(ProductNo)}"><xsl:value-of select="."/></a>
                                     </xsl:for-each>
                                 </dd>
                             </xsl:if>
@@ -399,7 +399,7 @@
                                     </h5>
                                 </dt>
                                 <dd class="col-8">
-                                    <a href="CompanyUrl" target="_blank"><xsl:value-of select="CompanyUrl"/></a>
+                                    <a href="{CompanyUrl}" target="_blank"><xsl:value-of select="CompanyUrl"/></a>
                                 </dd>
                             </xsl:if>
 
@@ -422,7 +422,7 @@
                                         </h5>
                                     </dt>
                                     <dd class="col-8">
-                                        <a href="mailto:{Email}?subject={$Title}%20{ProductNo}"><xsl:value-of select="Email"/></a>
+                                        <a href="mailto:{fn:encode-for-uri(Email)}?subject={fn:encode-for-uri($Title)}%20{fn:encode-for-uri(ProductNo)}"><xsl:value-of select="Email"/></a>
                                     </dd>
                                 </xsl:if>
 
@@ -433,7 +433,7 @@
                                         </h5>
                                     </dt>
                                     <dd class="col-8">
-                                        <a href="mailto:{EmailCompetentPerson}?subject={$Title}%20{ProductNo}"><xsl:value-of select="EmailCompetentPerson"/></a>
+                                        <a href="mailto:{fn:encode-for-uri(EmailCompetentPerson)}?subject={fn:encode-for-uri($Title)}%20{fn:encode-for-uri(ProductNo)}"><xsl:value-of select="EmailCompetentPerson"/></a>
                                     </dd>
                                 </xsl:if>
                             </xsl:for-each>
@@ -463,7 +463,7 @@
                         <dl class="row">
                             <xsl:for-each select="EmergencyPhone">
                                 <dt class="col-4">
-                                    <a href="tel:{No}"><xsl:value-of select="No"/></a>
+                                    <a href="tel:{fn:encode-for-uri(No)}"><xsl:value-of select="No"/></a>
                                 </dt>
                                 <dd class="col-8">
                                     <xsl:for-each select="EmergencyPhoneDescription">
